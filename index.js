@@ -56,7 +56,7 @@ function clear () {
 
 class Number {
   constructor(num) {
-    this.value = toString(num);
+    this.value = num.toString();
   }
 }
 
