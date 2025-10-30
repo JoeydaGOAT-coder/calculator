@@ -1,4 +1,4 @@
-const expressionOut = document.getElementById("expresion");
+const expressionOut = document.getElementById("expression");
 const answerOut = document.getElementById("output");
 const enterBtn = document.getElementById("enter-btn");
 
@@ -18,63 +18,61 @@ const subtract = document.getElementById("subtract");
 const multiply = document.getElementById("multiply");
 const divide = document.getElementById("divide");
 
-let One = {
-  type: "number",
-  value: 1
-};
-let Two = {
-  type: "number",
-  value: 2
-};
-let Three = {
-  type: "number",
-  value: 3
-};
-let Four = {
-  type: "number",
-  value: 4
-};
-let Five = {
-  type: "number",
-  value: 5
-};
-let Six = {
-  type: "number",
-  value: 6
-};
-let Seven = {
-  type: "number",
-  value: 7
-};
-let Eight = {
-  type: "number",
-  value: 8
-};
-let Nine = {
-  type: "number",
-  value: 9
-};
-let Zero = {
-  type: "number",
-  value: 0
-};
-
-let Plus = {
-  type: "add"
-};
-let Minus = {
-  type: "subtract"
-};
-let Multiply = {
-  type: "multiply"
-};
-let Divide = {
-  type: "divide"
-};
-
-let expression = [];
 let answer;
+let prevAnswer;
+let expression = "";
+let expFinal = false;
 
-function addDigit (digit) {
-  if (expression.length() > 1) {
-    if (expression
+function getExpression (string) {  
+  expression += string;
+  expressionOut.textContent = expression;
+}
+
+function getAnswer () {
+  try {
+    answer = eval(expression);
+    if (answer = NaN || answer = Infinity) {
+      answer = "Divide By Zero Error";
+    }
+  } catch (error) {
+    answer = "Syntax Error";
+  }
+  expFinal = true;
+  answerOut.textContent = typeof answer === "number" ? toString(answer): answer;
+}
+
+function checkExpression () {
+  if (expFinal) {
+    expressionOut.textContent = "";
+    expression = "";
+    expFinal = false;
+  }
+}
+
+function clear () {
+  answerOut.textContent = "";
+  expressionOut.textContent = "";
+}
+
+class Number {
+  constructor(num) {
+    this.value = toString(num);
+  }
+}
+
+class Operation {
+  constructor(operation) {
+    this.value = operation;
+  }
+}
+
+function addNum (num) {
+  checkExpression();
+  getExpresion(new Number(num));
+}
+
+function addOperation (operation) {
+  checkExpression();
+  getExpression(new Operation(operation));
+}
+
