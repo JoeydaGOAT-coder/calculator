@@ -102,7 +102,22 @@ function addOp (operation) {
 
 function assX () {
   getAnswer();
-  
+  answerOut.textContent = "x = " + typeof answer !== "string" ? answer.toString(): answer;
+  x = answer;
+}
+
+function assY () {
+  getAnswer();
+  answerOut.textContent = "y = " + typeof answer !== "string" ? answer.toString(): answer;
+  y = answer;
+}
+
+
+function assZ () {
+  getAnswer();
+  answerOut.textContent = "z = " + typeof answer !== "string" ? answer.toString(): answer;
+  z = answer;
+}
 
 enterBtn.addEventListener("click", getAnswer);
 one.addEventListener("click", addNum.bind(this, 1));
