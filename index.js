@@ -17,6 +17,9 @@ const add = document.getElementById("add");
 const subtract = document.getElementById("subtract");
 const multiply = document.getElementById("multiply");
 const divide = document.getElementById("divide");
+const exponent = document.getElementById("exponent");
+const openPar = document.getElementById("open-par");
+const closePar = document.getElementById("close-par");
 
 let answer;
 let prevAnswer;
@@ -91,3 +94,6 @@ add.addEventListener("click", addOp.bind(this, "+"));
 subtract.addEventListener("click", addOp.bind(this, "-"));
 multiply.addEventListener("click", addOp.bind(this, "*"));
 divide.addEventListener("click", addOp.bind(this, "/"));
+exponent.addEventListener("click", addOp.bind(this, "**"));
+openPar.addEventListener("click", addOp.bind(this, "("));
+closePar.addEventListener("click", addOp.bind(this, ")"));
