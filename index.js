@@ -31,7 +31,7 @@ function getExpression (string) {
 function getAnswer () {
   try {
     answer = eval(expression);
-    if (answer = NaN || answer = Infinity) {
+    if (answer === NaN || answer === Infinity) {
       answer = "Divide By Zero Error";
     }
   } catch (error) {
