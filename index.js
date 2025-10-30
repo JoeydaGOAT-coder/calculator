@@ -76,18 +76,18 @@ function addOp (operation) {
   getExpression(new Operation(operation));
 }
 
-enterBtn.addEventListener("click", getAnswer());
-one.addEventListener("click", addNum(1));
-two.addEventListener("click", addNum(2));
-three.addEventListener("click", addNum(3));
-four.addEventListener("click", addNum(4));
-five.addEventListener("click", addNum(5));
-six.addEventListener("click", addNum(6));
-seven.addEventListener("click", addNum(7));
-eight.addEventListener("click", addNum(8));
-nine.addEventListener("click", addNum(9));
-zero.addEventListener("click", addNum(0));
-add.addEventListener("click", addOp("+"));
-subtract.addEventListener("click", addOp("-"));
-multiply.addEventListener("click", addOp("*"));
-divide.addEventListener("click", addOp("/"));
+enterBtn.addEventListener("click", getAnswer);
+one.addEventListener("click", addNum.bind(this, 1));
+two.addEventListener("click", addNum.bind(this, 2));
+three.addEventListener("click", addNum.bind(this, 3));
+four.addEventListener("click", addNum.bind(this, 4));
+five.addEventListener("click", addNum.bind(this, 5));
+six.addEventListener("click", addNum.bind(this, 6));
+seven.addEventListener("click", addNum.bind(this, 7));
+eight.addEventListener("click", addNum.bind(this, 8));
+nine.addEventListener("click", addNum.bind(this, 9));
+zero.addEventListener("click", addNum.bind(this, 0));
+add.addEventListener("click", addOp.bind(this, "+"));
+subtract.addEventListener("click", addOp.bind(this, "-"));
+multiply.addEventListener("click", addOp.bind(this, "*"));
+divide.addEventListener("click", addOp.bind(this, "/"));
