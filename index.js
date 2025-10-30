@@ -21,11 +21,25 @@ const exponent = document.getElementById("exponent");
 const openPar = document.getElementById("open-par");
 const closePar = document.getElementById("close-par");
 const clearBtn = document.getElementById("clear");
+const factBtn = document.getElementById("fact");
+const stoXBtn = document.getElementById("sto-x");
+const stoYBtn = document.getElementById("sto-y");
+const stoZBtn = document.getElementById("sto-z");
+const xBtn = document.getElementById("x");
+const yBtn = document.getElementById("y");
+const zBtn = document.getElementById("z");
 
 let answer;
 let prevAnswer;
+let x;
+let y;
+let z;
 let expression = "";
 let expFinal = false;
+
+function fact (x) {
+  return Number.isInteger(x) && x >= 0 ? (x > 1 ? fact(x-1) * x: 1): NaN;
+}
 
 function getExpression (string, isOperator) {  
   if (isOperator && expression.length === 0) {
@@ -85,6 +99,10 @@ function addOp (operation) {
   checkExpression();
   getExpression(new Operation(operation), true);
 }
+
+function assX () {
+  getAnswer();
+  
 
 enterBtn.addEventListener("click", getAnswer);
 one.addEventListener("click", addNum.bind(this, 1));
