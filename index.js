@@ -38,7 +38,7 @@ function getAnswer () {
     answer = "Syntax Error";
   }
   expFinal = true;
-  answerOut.textContent = typeof answer !== "string" ? toString(answer): answer;
+  answerOut.textContent = typeof answer !== "string" ? answer.toString(): answer;
 }
 
 function checkExpression () {
