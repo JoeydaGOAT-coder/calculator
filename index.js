@@ -68,7 +68,7 @@ class Operation {
 
 function addNum (num) {
   checkExpression();
-  getExpresion(new Number(num));
+  getExpression(new Number(num));
 }
 
 function addOp (operation) {
