@@ -20,7 +20,7 @@ const divide = document.getElementById("divide");
 const exponent = document.getElementById("exponent");
 const openPar = document.getElementById("open-par");
 const closePar = document.getElementById("close-par");
-const clear = document.getElementById("clear");
+const clearBtn = document.getElementById("clear");
 
 let answer;
 let prevAnswer;
@@ -98,4 +98,4 @@ divide.addEventListener("click", addOp.bind(this, "/"));
 exponent.addEventListener("click", addOp.bind(this, "**"));
 openPar.addEventListener("click", addOp.bind(this, "("));
 closePar.addEventListener("click", addOp.bind(this, ")"));
-clear.addEventListener("click", clear);
+clearBtn.addEventListener("click", clear);
