@@ -46,6 +46,7 @@ function getAnswer () {
   }
   expFinal = true;
   answerOut.textContent = typeof answer !== "string" ? answer.toString(): answer;
+  prevAnswer = answer;
 }
 
 function checkExpression () {
