@@ -27,7 +27,10 @@ let prevAnswer;
 let expression = "";
 let expFinal = false;
 
-function getExpression (string) {  
+function getExpression (string, isOperator) {  
+  if (isOperator && expression.length === 0) {
+    expression = prevAnswer.toString();
+  }
   expression += string.value;
   expressionOut.textContent = expression;
 }
@@ -56,6 +59,8 @@ function checkExpression () {
 function clear () {
   answerOut.textContent = "";
   expressionOut.textContent = "";
+  expression = "";
+  answer = "";
 }
 
 class Number {
@@ -77,7 +82,7 @@ function addNum (num) {
 
 function addOp (operation) {
   checkExpression();
-  getExpression(new Operation(operation));
+  getExpression(new Operation(operation), true);
 }
 
 enterBtn.addEventListener("click", getAnswer);
