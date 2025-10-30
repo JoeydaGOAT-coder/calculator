@@ -24,7 +24,7 @@ let expression = "";
 let expFinal = false;
 
 function getExpression (string) {  
-  expression += string;
+  expression += string.value;
   expressionOut.textContent = expression;
 }
 
@@ -38,7 +38,7 @@ function getAnswer () {
     answer = "Syntax Error";
   }
   expFinal = true;
-  answerOut.textContent = typeof answer === "number" ? toString(answer): answer;
+  answerOut.textContent = typeof answer !== "string" ? toString(answer): answer;
 }
 
 function checkExpression () {
@@ -71,8 +71,23 @@ function addNum (num) {
   getExpresion(new Number(num));
 }
 
-function addOperation (operation) {
+function addOp (operation) {
   checkExpression();
   getExpression(new Operation(operation));
 }
 
+enterBtn.addEventListener("click", getAnswer());
+one.addEventListener("click", addNum(1));
+two.addEventListener("click", addNum(2));
+three.addEventListener("click", addNum(3));
+four.addEventListener("click", addNum(4));
+five.addEventListener("click", addNum(5));
+six.addEventListener("click", addNum(6));
+seven.addEventListener("click", addNum(7));
+eight.addEventListener("click", addNum(8));
+nine.addEventListener("click", addNum(9));
+zero.addEventListener("click", addNum(0));
+add.addEventListener("click", addOp("+"));
+subtract.addEventListener("click", addOp("-"));
+multiply.addEventListener("click", addOp("*"));
+divide.addEventListener("click", addOp("/"));
