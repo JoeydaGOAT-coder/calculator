@@ -98,4 +98,4 @@ divide.addEventListener("click", addOp.bind(this, "/"));
 exponent.addEventListener("click", addOp.bind(this, "**"));
 openPar.addEventListener("click", addOp.bind(this, "("));
 closePar.addEventListener("click", addOp.bind(this, ")"));
-clearBtn.addEventListener("click", clear);
+clearBtn.addEventListener("click", clear.bind(this));
