@@ -37,6 +37,12 @@ let z;
 let expression = "";
 let expFinal = false;
 
+Number.isInteger = Number.isInteger || function(value) {
+    return typeof value === "number" && 
+           isFinite(value) && 
+           Math.floor(value) === value;
+};
+
 function fact (x) {
   return (Number.isInteger(x) && x >= 0 ? (x > 1 ? fact(x-1) * x: 1): NaN).toString();
 }
