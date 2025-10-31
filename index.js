@@ -56,8 +56,10 @@ function getExpression (string, isOperator) {
 }
 
 function evaluate (string) {
+    let value;
     let splitString = string.split("");
-    
+    if (splitString[0] === "-") {
+        
 
 function getAnswer () {
   try {
