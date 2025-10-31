@@ -57,6 +57,7 @@ function getAnswer () {
     }
   } catch (error) {
     answer = "Syntax Error";
+    console.log(error);
   }
   expFinal = true;
   answerOut.textContent = typeof answer !== "string" ? answer.toString(): answer;
