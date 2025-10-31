@@ -76,6 +76,7 @@ function clear () {
   expressionOut.textContent = "";
   expression = "";
   answer = "";
+  
 }
 
 class Number {
@@ -100,22 +101,27 @@ function addOp (operation) {
   getExpression(new Operation(operation), true);
 }
 
+function addVar (x) {
+  checkExpression();
+  getExpression(new Operation(x));
+}
+
 function assX () {
   getAnswer();
-  answerOut.textContent = "x = " + typeof answer !== "string" ? answer.toString(): answer;
+  answerOut.textContent = "x = " + (typeof answer !== "string" ? answer.toString(): answer);
   x = answer;
 }
 
 function assY () {
   getAnswer();
-  answerOut.textContent = "y = " + typeof answer !== "string" ? answer.toString(): answer;
+  answerOut.textContent = "y = " + (typeof answer !== "string" ? answer.toString(): answer);
   y = answer;
 }
 
 
 function assZ () {
   getAnswer();
-  answerOut.textContent = "z = " + typeof answer !== "string" ? answer.toString(): answer;
+  answerOut.textContent = "z = " + (typeof answer !== "string" ? answer.toString(): answer);
   z = answer;
 }
 
@@ -138,10 +144,10 @@ exponent.addEventListener("click", addOp.bind(this, "**"));
 openPar.addEventListener("click", addOp.bind(this, "("));
 closePar.addEventListener("click", addOp.bind(this, ")"));
 clearBtn.addEventListener("click", clear.bind(this));
-factBtn.addEventListener("click", addOp.bind(this, "fact("));
+factBtn.addEventListener("click", addVar.bind(this, "fact("));
 stoXBtn.addEventListener("click", assX.bind(this));
 stoYBtn.addEventListener("click", assY.bind(this));
 stoZBtn.addEventListener("click", assZ.bind(this));
-xBtn.addEventListener("click", addOp.bind(this, "x"));
-yBtn.addEventListener("click", addOp.bind(this, "y"));
-zBtn.addEventListener("click", addOp.bind(this, "z"));
+xBtn.addEventListener("click", addVar.bind(this, "x"));
+yBtn.addEventListener("click", addVar.bind(this, "y"));
+zBtn.addEventListener("click", addVar.bind(this, "z"));
