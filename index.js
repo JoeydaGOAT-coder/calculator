@@ -55,10 +55,14 @@ function getExpression (string, isOperator) {
   expressionOut.textContent = expression;
 }
 
+function evaluate (string) {
+    let splitString = string.split("");
+    
+
 function getAnswer () {
   try {
     answer = eval(expression);
-    if (answer === NaN || answer === Infinity) {
+    if (answer === Infinity) {
       answer = "Divide By Zero Error";
     }
   } catch (error) {
