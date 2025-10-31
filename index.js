@@ -38,7 +38,7 @@ let expression = "";
 let expFinal = false;
 
 function fact (x) {
-  return Number.isInteger(x) && x >= 0 ? (x > 1 ? fact(x-1) * x: 1): NaN;
+  return (Number.isInteger(x) && x >= 0 ? (x > 1 ? fact(x-1) * x: 1): NaN).toString();
 }
 
 function getExpression (string, isOperator) {  
