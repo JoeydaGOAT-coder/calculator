@@ -37,14 +37,13 @@ let z;
 let expression = "";
 let expFinal = false;
 
-Number.isInteger = Number.isInteger || function(value) {
-    return typeof value === "number" && 
-           isFinite(value) && 
-           Math.floor(value) === value;
-};
+function isInt(value) {
+    var er = /^-?[0-9]+$/;
+    return er.test(value);
+}
 
 function fact (x) {
-  return (Number.isInteger(x) && x >= 0 ? (x > 1 ? fact(x-1) * x: 1): NaN).toString();
+  return (isInt(x) && x >= 0 ? (x > 1 ? fact(x-1) * x: 1): NaN).toString();
 }
 
 function getExpression (string, isOperator) {  
