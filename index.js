@@ -28,9 +28,10 @@ const stoZBtn = document.getElementById("sto-z");
 const xBtn = document.getElementById("x");
 const yBtn = document.getElementById("y");
 const zBtn = document.getElementById("z");
+const ANSbtn = document.getElementById("prev-ans");
 
 let answer;
-let prevAnswer;
+let ANS;
 let x;
 let y;
 let z;
@@ -48,7 +49,7 @@ function fact (x) {
 
 function getExpression (string, isOperator) {  
   if (isOperator && expression.length === 0) {
-    expression = prevAnswer.toString();
+    expression = ANS.toString();
   }
   expression += string.value;
   expressionOut.textContent = expression;
@@ -66,7 +67,7 @@ function getAnswer () {
   }
   expFinal = true;
   answerOut.textContent = typeof answer !== "string" ? answer.toString(): answer;
-  prevAnswer = answer;
+  ANS = answer;
 }
 
 function checkExpression () {
@@ -157,3 +158,4 @@ stoZBtn.addEventListener("click", assZ.bind(this));
 xBtn.addEventListener("click", addVar.bind(this, "x"));
 yBtn.addEventListener("click", addVar.bind(this, "y"));
 zBtn.addEventListener("click", addVar.bind(this, "z"));
+ANSbtn.addEventListener("click", addVar.bind(this, "ANS"));
